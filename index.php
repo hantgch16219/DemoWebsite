@@ -142,15 +142,7 @@
 
 
 		<div id="footer">
-	      <p><a href="http://localhost/homepage.php">Home</a> | <a href="admin.php">Admin</a> | <a href="">Order</a> | <a href="aboutus.php">About US</a> 
-	      <table style="padding-left: 35%">
-	      	<tr>
-	      		<th>Associated with</th>
-	      		<th><img style="width: 50px; height:50px ;" src="img/lamborghini.png" alt=""></th>
-	      		<th><img style="width: 50px; height:50px ; background-color:#FFFFFF" src="img/maserati.png" alt=""></th>
-	      		<th><img style="width: 50px; height:50px ; background-color:#FFFFFF" src="img/koenigsegg.jpg" alt=""></th>
-	      	</tr>
-	      </table>
+	      <p><a href="http://DemoWebsite.herokuapp.com/homepage.php">Home</a> | <a href="admin.php">Admin</a> | <a href="">Order</a> | <a href="aboutus.php">About US</a> 
 	      <p>
 	      	 
 	      </p>

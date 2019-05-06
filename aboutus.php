@@ -9,14 +9,14 @@
 	    <div id="header">
 		    <div id="logo">
 		        <div id="logo_text">
-		          <h1><a href="http://localhost/homepage.php">Ha's Motor</a></h1>
+		          <h1><a href="http://DemoWebsite.herokuapp.com/aboutus.php">Ha's Motor</a></h1>
 		          <h2>Luxuries Vehicles</h2>
 		        </div>
 		    </div>
 		    <div id="menubar">
 		        <ul id="menu">
 		          <li class="selected"><a href="homepage.php">Home</a></li>
-		          <li><a href="http://localhost/admin.php">Admin</a></li>
+		          <li><a href="http://DemoWebsite.herokuapp.com/admin.php">Admin</a></li>
 		          <li><a href="">Order</a></li>
 		          <li><a href="aboutus.php">About Us</a></li>	      
 		        </ul>
@@ -35,7 +35,7 @@
 	   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 	
 <div id="footer" style="overflow: hidden;">
-	      <p><a href="http://localhost/homepage.php">Home</a> | <a href="admin.php">Admin</a> | <a href="">Order</a> | <a href="">About US</a> 
+	      <p><a href="http://DemoWebsite.herokuapp.com/homepage.php">Home</a> | <a href="admin.php">Admin</a> | <a href="">Order</a> | <a href="">About US</a> 
 	      <table style="padding-left: 41%">
 	      	<tr>
 	      		<th>Associated with</th>
