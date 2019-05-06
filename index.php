@@ -126,7 +126,7 @@
 		             $Stock = $rowfirst['stock'];
 		            ?>
 					<div class="item">
-						<a href="modeldetail.php?prid=<?=$rows[$i]['ProductID']?>"><div class="iimage"><img src="<?= $Image; ?>">
+						<a href="modeldetail.php?prid=<?=$ToyId; ?>"><div class="iimage"><img src="<?= $Image; ?>">
 						</div></a>
 						<div class="Thongtin">	 <?= $ToyName; ?> <br>
 												Manufacturer: <?= $Manufacturer; ?> <br>
