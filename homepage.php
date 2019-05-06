@@ -55,8 +55,8 @@
 	    <div id="header">
 		    <div id="logo">
 		        <div id="logo_text">
-		          <h1><a href="http://DemoWebsite.herokuapp.com/homepage.php">Ha's Motor</a></h1>
-		          <h2>Luxuries Vehicles</h2>
+		          <h1><a href="http://DemoWebsite.herokuapp.com/homepage.php">ATN COMPANY</a></h1>
+		          <h2>World of Toys</h2>
 		        </div>
 		    </div>
 		    <div id="menubar">
@@ -96,19 +96,7 @@
 			        <div class="sidebar_top" style="background-image:url(<?php echo 'img/side_top.png'?>)"></div>
 			        <div class="sidebar_item" style="background-image:url(<?php echo 'img/side_back.png'?>) ;">
 
-			        <?php 
-			 				require_once('./hamotorconnector.php');
-							$conn = new hamotorconnector();
-							$sql = "Select * from category";
-							$rows = $conn -> runQuery($sql);
-							foreach($rows as $r)
-							{
-						?> 
-							<li><a style=" font-size: 20px; text-decoration: none;" href="categorydetail.php?Categoryid=<?=$r['CategoryID']?>"><?=$r['CategoryName']?></a></li>
-						<?php 
-							}
-						?>
-
+			       
 					</div>
 					<div class="sidebar_base" style="background-image:url(<?php echo 'img/side_base.png'?>)"></div>
  
@@ -119,24 +107,39 @@
 
         <div class="khuvuctrungbay">
         	<h1> <b>Models</b></h1>
-			<?php 
-			require_once('./hamotorconnector.php');
-			$conn = new hamotorconnector();
-			$sql = "Select * From product";
-			$rows = $conn->runQuery($sql);
-			for ($i=0; $i < count($rows) ; $i++) { 
-				?>
+
+
+
+<?php
+
+		     include 'hamotorconnector.php';
+
+		    $queryfirst = "SELECT * from product order by product";
+		    $resultfirst = pg_query($connection,$queryfirst);
+		    if (pg_num_rows($resultfirst) > 0) {
+		      // output data of each row
+		      while($rowfirst = pg_fetch_assoc($resultfirst)) {
+
+		            $ToyId = $rowfirst['toyid'];
+		            $ToyName = $rowfirst['toyname'];
+		            $Manufacturer = $rowfirst['manufacturer'];
+		             $Price = $rowfirst['price'];
+		            $Image = $rowfirst['image'];
+		             $Stock = $rowfirst['stock'];
+		            ?>
+
+
 					<div class="item">
-						<a href="modeldetail.php?prid=<?=$rows[$i]['ProductID']?>"><div class="iimage"><img src="<?=$rows[$i]['Image']?>">
+						<a href="modeldetail.php?prid=<?=$rows[$i]['ProductID']?>"><div class="iimage"><img src="<?= $Image; ?>">
 						</div></a>
-						<div class="Thongtin">	 <?=$rows[$i]['ProductName']?> <br>
-												Manufacturer: <?=$rows[$i]['Manufacturer']?> <br>
-												Cost: $<?=$rows[$i]['Unitprice']?> <br>
-												Stock:<?=$rows[$i]['Stock']?>
+						<div class="Thongtin">	 <?= $ToyName; ?> <br>
+												Manufacturer: <?= $Manufacturer; ?> <br>
+												Cost: <?=$Price; ?> <br>
+												Stock:<?= $Stock; ?>
 						</div>
 					</div>
 						<?php
-		}
+		}}
 			?>
 		</div>
 

@@ -1,42 +1,10 @@
 <?php
-class hamotorconnector{
-	public $host='localhost';
-	public $dbname='asm';
-	public $un= 'root';
-	public $pw='';
-	public function runQuery($sql)
 
-	{
-		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
-		//chay cau truy van
-		$result = $conn->query($sql);
-		//doc ket qua chay cau truy van, tra ve mot mang
-		$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-		//dong ket noi
-		$conn->close();
-		return $rows;
+$connection = pg_connect("host=
+ec2-50-19-114-27.compute-1.amazonaws.com port=5432 dbname=dcbgmnapj8rr06 user=
+oblktokpjexyjf password=3942020ac52a5bfcef07d1c56e8312121626f9a1f64412dbde431a158abf8e7b");  
+ if(!$connection) {
+     die("Database connection failed");
+ }
 
-	}
-	public function execStatement($sql)
-	{
-		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
-		//chay cau truy van
-		$result = $conn->query($sql);
-		//dong ket noi
-		$conn->close();
-	}
-	public function runQueryadmin($sql)
-
-	{
-		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
-		//chay cau truy van
-		$result = $conn->query($sql);
-		//doc ket qua chay cau truy van, tra ve mot mang
-		$rows = mysqli_fetch_all($result);
-		//dong ket noi
-		$conn->close();
-		return $rows;
-
-	}
-} 
  ?>
