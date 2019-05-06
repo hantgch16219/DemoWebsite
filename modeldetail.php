@@ -134,21 +134,30 @@
 
         <div class="sanphamchitiet">
 			<?php
-			if (isset($_GET['prid'])) {
-				require_once('./hamotorconnector.php');
-			$conn = new hamotorconnector();
-			$sql = "Select * From product WHERE ProductID =".$_GET['prid'];
-			$rows = $conn->runQuery($sql);
-			for ($i=0; $i < count($rows) ; $i++) { 
-				?>
+
+		     include 'hamotorconnector.php';
+
+		    $queryfirst = "SELECT * from product  where toyid = '$ToyId'";
+		    $resultfirst = pg_query($connection,$queryfirst);
+		    if (pg_num_rows($resultfirst) > 0) {
+		      // output data of each row
+		      while($rowfirst = pg_fetch_assoc($resultfirst)) {
+
+		            $ToyId = $rowfirst['toyid'];
+		            $ToyName = $rowfirst['toyname'];
+		            $Manufacturer = $rowfirst['manufacturer'];
+		             $Price = $rowfirst['price'];
+		            $Image = $rowfirst['image'];
+		             $Stock = $rowfirst['stock'];
+		            ?>
 				<form action="">
 				<div class="Chitietsanpham1">
-					<div class="anh"><img src="<?=$rows[$i]['Image']?>" alt="">
+					<div class="anh"><img src="<?= $Image; ?>" alt="">
 					</div>
-					<div class="chitiet">	<br>Model: <?=$rows[$i]['ProductName']?> <br> <br>
-											Manufacturer: <?=$rows[$i]['Manufacturer']?> <br> <br>
-											Cost: $<?=$rows[$i]['Unitprice']?> <br> <br>
-											Stock:<?=$rows[$i]['Stock']?> <br> <br>
+					<div class="chitiet">	<br>Model: <?= $ToyName; ?> <br> <br>
+											Manufacturer: <?= $Manufacturer; ?> <br> <br>
+											Cost: <?= $Price; ?> <br> <br>
+											Stock:<?= $Stock; ?> <br> <br>
 											Amount: <input type="number" style="width: 100px; "> <br> <br> <br>
 											<a href=""><input type="button" value="Order" style=" background-color: #8A6E3D; color: #FFFFFF; width:40%; height: 30px; margin: 20px" ></a>
 											<a href="homepage.php"><input type="button" value="Back to homepage" style=" background-color: 
