@@ -108,13 +108,12 @@
         <div class="khuvuctrungbay">
         	<h1> <b>Models</b></h1>
 
-
-
-<?php
+			<?php
 
 		     include 'hamotorconnector.php';
 
-		    $queryfirst = "SELECT * from product order by product";
+		    $queryfirst = "SELECT * from toys
+		    ";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
 		      // output data of each row
@@ -127,8 +126,6 @@
 		            $Image = $rowfirst['image'];
 		             $Stock = $rowfirst['stock'];
 		            ?>
-
-
 					<div class="item">
 						<a href="modeldetail.php?prid=<?=$rows[$i]['ProductID']?>"><div class="iimage"><img src="<?= $Image; ?>">
 						</div></a>
