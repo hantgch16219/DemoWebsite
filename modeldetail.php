@@ -137,7 +137,7 @@
 
 		     include 'hamotorconnector.php';
 		    $ToyId = $_GET['toyid'];
-		    $queryfirst = "SELECT toyid, toyname, manufacturer, price, image, stock from toys  where toyid = '$ToyId' ";
+		    $queryfirst = "SELECT * from toys  where toyid = '$ToyId' ";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
 		      // output data of each row
