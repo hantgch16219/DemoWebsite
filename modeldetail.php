@@ -136,7 +136,7 @@
 			<?php
 
 		     include 'hamotorconnector.php';
-
+		    $ToyId = $_GET['toyid']
 		    $queryfirst = "SELECT * from toys  where toyid = '$ToyId'";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
